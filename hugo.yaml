@@ -1,4 +1,4 @@
-baseURL: "https://username.github.io/"
+baseURL: "https://golevishal.github.io/"
 languageCode: "en-us"
 title: "My Tech Blog"
 theme: "paper-mod"
@@ -7,7 +7,7 @@ params:
   env: production
   title: "My Tech Blog"
   description: "A technical blog about software engineering"
-  author: "Your Name"
+  author: "Vishal Gole"
   
   defaultTheme: auto
   disableThemeToggle: false
@@ -19,7 +19,7 @@ params:
   ShowCodeCopyButtons: true
   
   editPost:
-    URL: "https://github.com/username/username.github.io/blob/main/content"
+    URL: "https://github.com/golevishal/golevishal.github.io/blob/main/content"
     Text: "Suggest Changes"
     appendFilePath: true
 
