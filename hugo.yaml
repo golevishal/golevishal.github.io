@@ -2,3 +2,26 @@ baseURL: "https://username.github.io/"
 languageCode: "en-us"
 title: "My Tech Blog"
 theme: "paper-mod"
+
+params:
+  env: production
+  title: "My Tech Blog"
+  description: "A technical blog about software engineering"
+  author: "Your Name"
+  
+  defaultTheme: auto
+  disableThemeToggle: false
+  
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  
+  editPost:
+    URL: "https://github.com/username/username.github.io/blob/main/content"
+    Text: "Suggest Changes"
+    appendFilePath: true
+
+  label:
+    text: "Home"
