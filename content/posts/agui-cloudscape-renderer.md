@@ -16,12 +16,30 @@ Normally, if an agent needs a specific UI, developers build a custom React compo
 
 The **A2UI Protocol** solves this by defining a standardized catalog of UI components that an agent can request. The frontend then becomes a "dumb" renderer that knows how to turn those protocol events into functional interfaces.
 
-## Enter agui-cloudscape-renderer
+## Architecture: The Bridge Pattern
 
-This library acts as the presentation layer for the A2UI protocol. It maps the protocol's primitive components (Cards, Tables, Buttons) 1:1 to **AWS Cloudscape** components.
+The library acts as the presentation layer for the A2UI protocol. It maps the protocol's primitive components (Cards, Tables, Buttons) 1:1 to **AWS Cloudscape** components.
+
+```mermaid
+flowchart TD
+    A["AG-UI Event Stream\n(WebSocket / SSE / Mock)"] --> B["ProtocolBridge\nRoutes events by type"]
+    B --> C["A2UIRenderer\nRecursive catalog tree"]
+    B --> D["SurfaceRenderer\nHITL forms + validation"]
+    B --> E["A2UITableRenderer\nAuto-columns + status icons"]
+    B --> F["TraceSidebar\nTool-call trace"]
+    C --> G["Cloudscape Design System"]
+    D --> G
+    E --> G
+
+    style A fill:#232f3e,color:#ff9900,stroke:#ff9900
+    style B fill:#232f3e,color:#fff,stroke:#527fff
+    style G fill:#232f3e,color:#ff9900,stroke:#ff9900
+```
 
 ### 1. Protocol-Driven Architecture
 The heart of the renderer is a recursive parser. When a backend sends an `A2UI_RENDER` event, the renderer decomposes the JSON and routes it through a `ProtocolBridge`.
+
+![A2UI Demo Showcase](https://github.com/golevishal/agui-cloudscape-renderer/raw/main/docs/screenshots/demo.png)
 
 ```json
 {
