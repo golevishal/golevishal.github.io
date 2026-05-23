@@ -1,13 +1,36 @@
 baseURL: "https://golevishal.github.io/"
-languageCode: "en-us"
-title: "My Tech Blog"
+locale: "en-us"
+title: "Vishal Gole"
 theme: "paper-mod"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 30
 
 params:
   env: production
-  title: "My Tech Blog"
-  description: "A technical blog about software engineering"
+  title: "Vishal Gole"
+  description: "Technical notes on AI agents, cloud systems, React, TypeScript, and developer tooling."
   author: "Vishal Gole"
+  images:
+    - "https://github.com/golevishal/agui-cloudscape-renderer/raw/main/docs/screenshots/playground.png"
   
   defaultTheme: auto
   disableThemeToggle: false
@@ -25,3 +48,11 @@ params:
 
   label:
     text: "Home"
+
+  homeInfoParams:
+    Title: "Vishal Gole"
+    Content: "Technical notes on AI agents, cloud systems, React, TypeScript, and the interfaces that make software easier to operate."
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/golevishal"

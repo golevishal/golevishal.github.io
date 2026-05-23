@@ -1,16 +1,19 @@
 ---
-title: "Bridging the Gap: Rendering Agent-to-UI (A2UI) with AWS Cloudscape"
+title: "Rendering AI Agent Interfaces with A2UI, React, and AWS Cloudscape"
 date: 2026-05-21T23:55:00Z
 draft: false
-tags: ["AI", "React", "Cloudscape", "Protocols"]
+tags: ["AI Agents", "React", "TypeScript", "AWS Cloudscape", "Agent UI", "Human-in-the-loop", "A2UI"]
 summary: "A practical look at how agui-cloudscape-renderer turns Agent-to-UI events into dynamic, enterprise-grade Cloudscape interfaces."
+ShowToc: true
+cover:
+  image: "https://github.com/golevishal/agui-cloudscape-renderer/raw/main/docs/screenshots/playground.png"
+  alt: "A2UI Cloudscape renderer playground with JSON input and rendered UI"
+  caption: "Protocol Playground rendering A2UI JSON as native Cloudscape UI."
 ---
 
 AI agents are quickly moving beyond chat. They need to ask for approvals, show tables, collect structured inputs, expose tool traces, and update state while a task is still running. That creates a practical frontend problem: when an agent needs to present a real interface, how does it describe that UI without every application inventing its own one-off React components and JSON schema?
 
 That is the space I wanted to explore with [agui-cloudscape-renderer](https://github.com/golevishal/agui-cloudscape-renderer): a renderer that takes **Agent-to-UI (A2UI)** style events from an AG-UI stream and turns them into native [AWS Cloudscape](https://cloudscape.design/) components. The goal is simple: let the agent describe *what* interface it needs, while the frontend owns *how* that interface is rendered, validated, and sent back to the agent.
-
-![Protocol Playground: JSON editor on the left and rendered Cloudscape output on the right](https://github.com/golevishal/agui-cloudscape-renderer/raw/main/docs/screenshots/playground.png)
 
 ## The Problem: Backend Agents vs. Frontend Bloat
 
