@@ -115,8 +115,6 @@ When a tool call requires approval, AgentIAM automatically converts the checkpoi
 
 ## This Is Day One
 
-I am building this in one hour a day, after dinner. It is my first serious open source contribution.
-
 The core is working. The LangGraph adapter is live. Postgres persistence is available for production deployments. But there is a lot more to build — SQLite for lightweight local use, adapters for the OpenAI Agents SDK and Vercel AI SDK, better policy validation errors, and eventually a small approval UI.
 
 If you are building with agents and this problem sounds familiar — I would genuinely love your input.
