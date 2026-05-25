@@ -3,6 +3,7 @@ title: "MCP Gives AI Agents 1000 Tools. Who Decides Which Ones They Can Use?"
 date: "2026-05-25T20:43:42.162Z"
 draft: false
 tags: ["ai", "agents", "mcp", "security"]
+images: ["/images/agentiam-og.png"]
 summary: "Why I built AgentIAM — and why this problem is only going to get bigger."
 ---
 ---
