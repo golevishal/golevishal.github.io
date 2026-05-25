@@ -45,6 +45,22 @@ That is the idea behind **AgentIAM**.
 
 AgentIAM is a small, framework-agnostic library that intercepts tool calls and evaluates them against a policy before anything executes.
 
+```mermaid
+flowchart TD
+    Agent[AI Agent] -->|Proposes Tool Call| IAM{Agent IAM<br>Policy Engine}
+    
+    IAM -->|allow| Exec[Execute Tool]
+    IAM -->|deny| Block[Block Execution]
+    
+    IAM -->|approval_required| Checkpoint[Emit Checkpoint<br>Pause Agent]
+    
+    Checkpoint -.->|Human Approves| Exec
+    Checkpoint -.->|Human Rejects| Block
+    
+    Exec --> Result[Return Result to Agent]
+    Block --> DenyMsg[Return Error to Agent]
+```
+
 ```javascript
 import { definePolicy, createAgentIAM } from "@agentiam/core";
 
