@@ -93,9 +93,11 @@ AgentIAM is my attempt to build that authorization layer in the open — generic
 
 ---
 
-## LangGraph Integration
+## Framework Integrations
 
-If you use LangGraph, the integration is a single drop-in replacement for your `ToolNode`:
+AgentIAM is designed to slip seamlessly into whatever framework you're already using. We currently have native adapters for **LangGraph**, the **Vercel AI SDK**, and the raw **OpenAI SDK**.
+
+For example, if you use LangGraph, the integration is a single drop-in replacement for your `ToolNode`:
 
 ```javascript
 import { createGuardedToolNode } from "@agentiam/langgraph";
@@ -116,7 +118,7 @@ When a tool call requires approval, AgentIAM automatically converts the checkpoi
 
 ## This Is Day One
 
-The core is working. The LangGraph adapter is live. Postgres persistence is available for production deployments. But there is a lot more to build — SQLite for lightweight local use, adapters for the OpenAI Agents SDK and Vercel AI SDK, better policy validation errors, and eventually a small approval UI.
+The core is working. The LangGraph, Vercel AI, and OpenAI adapters are live. Postgres persistence is available for production deployments. But there is a lot more to build — SQLite for lightweight local use, better policy validation errors, and eventually a small approval UI.
 
 If you are building with agents and this problem sounds familiar — I would genuinely love your input.
 
